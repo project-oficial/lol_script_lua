@@ -220,9 +220,9 @@ A função ListBox cria uma lista de itens selecionáveis.
 
 ### Argumentos:
 
--   label: um ponteiro para uma cadeia de caracteres contendo o rótulo do controle.
--   list: uma referência ao objeto de lista que contém os itens a serem exibidos na lista.
--   index: um índice inteiro contendo o índice do item selecionado na lista.
+-   `label`: um ponteiro para uma cadeia de caracteres contendo o rótulo do controle.
+-   `list`: uma referência ao objeto de lista que contém os itens a serem exibidos na lista.
+-   `index`: um índice inteiro contendo o índice do item selecionado na lista.
 
 ### Retorno: 
 A função retorna o índice do item selecionado pelo usuário.
@@ -243,9 +243,9 @@ A função ComboBox cria um menu suspenso com itens selecionáveis.
 
 ### Argumentos:
 
--   label: um ponteiro para uma cadeia de caracteres contendo o rótulo do controle.
--   list: uma referência ao objeto de lista que contém os itens a serem exibidos no menu.
--   index: um índice inteiro contendo o índice do item selecionado no menu.
+-   `label`: um ponteiro para uma cadeia de caracteres contendo o rótulo do controle.
+-   `list`: uma referência ao objeto de lista que contém os itens a serem exibidos no menu.
+-   `index`: um índice inteiro contendo o índice do item selecionado no menu.
 
 ### Retorno: 
 A função retorna o índice do item selecionado pelo usuário.
