@@ -39,9 +39,10 @@ In this tutorial, I will teach you how to download scripts and put them in the c
 
 ## Tutorial on how to find the default directory letter
 
+```
 1- Press the WINDOWS + E keys to open File Explorer.
 2- In the sidebar, navigate to find "This PC," as shown in the image below:
-
+```
 ![Windows EXPLORER](https://i.imgur.com/ysnZjr6.png)
 
 3- Note that the disk containing the Windows icon is where the system is installed, and it is on this disk that we will base ourselves. By default, Windows is installed on the C: drive, but this can be changed according to the user's preferences. In this case, it will be necessary to edit some of the script files.
