@@ -272,11 +272,11 @@ A função ``DrawCircle`` é responsável por desenhar um círculo na interface 
 Ela recebe cinco parâmetros:
 
 ## Parâmetros:
--   "center": um objeto da classe "Vec2" que representa o centro do círculo a ser desenhado.
--   "radius": um valor float que representa o raio do círculo a ser desenhado.
--   "numPoints": um valor inteiro que representa o número de pontos a serem utilizados para desenhar o círculo. Quanto maior o valor, mais suave será a curvatura do círculo.
--   "thickness": um valor float que representa a espessura da linha utilizada para desenhar o círculo.
--   "color": um objeto da classe "Vec4" que representa a cor utilizada para desenhar o círculo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
+-   `center`: um objeto da classe "Vec2" que representa o centro do círculo a ser desenhado.
+-   `radius`: um valor float que representa o raio do círculo a ser desenhado.
+-   `numPoints`: um valor inteiro que representa o número de pontos a serem utilizados para desenhar o círculo. Quanto maior o valor, mais suave será a curvatura do círculo.
+-   `thickness`: um valor float que representa a espessura da linha utilizada para desenhar o círculo.
+-   `color`: um objeto da classe "Vec4" que representa a cor utilizada para desenhar o círculo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
 
 Essa função é útil para desenhar objetos circulares.
 Exemplo:
@@ -306,10 +306,10 @@ draw:DrawCircle(center, radius, numPoints, thickness, color)
 A função `DrawCircleFilled` é bastante semelhante à `DrawCircle`, com a diferença de que o círculo é preenchido em vez de ser desenhado apenas com uma linha. Ela recebe os mesmos parâmetros que a função `DrawCircle`, com exceção do parâmetro `thickness`.
 
 ## Parâmetros:
--   "center": um objeto da classe "Vec2" que representa o centro do círculo a ser desenhado.
--   "radius": um valor float que representa o raio do círculo a ser desenhado.
--   "numPoints": um valor inteiro que representa o número de pontos a serem utilizados para desenhar o círculo. Quanto maior o valor, mais suave será a curvatura do círculo.
--   "color": um objeto da classe "Vec4" que representa a cor utilizada para preencher o círculo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
+-   `center`: um objeto da classe "Vec2" que representa o centro do círculo a ser desenhado.
+-   `radius`: um valor float que representa o raio do círculo a ser desenhado.
+-   `numPoints`: um valor inteiro que representa o número de pontos a serem utilizados para desenhar o círculo. Quanto maior o valor, mais suave será a curvatura do círculo.
+-   `color`: um objeto da classe "Vec4" que representa a cor utilizada para preencher o círculo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
 
 Essa função é útil para desenhar objetos circulares preenchidos.
 Exemplo:
@@ -390,10 +390,10 @@ A função ``DrawRect`` é responsável por desenhar um retângulo na interface 
 Ela recebe quatro parâmetros:
 
 ## Parâmetros:
--   "box": um objeto da classe "Vec4" que representa as coordenadas do retângulo a ser desenhado. O objeto possui as seguintes informações: (x, y, largura, altura), onde (x, y) é a posição inicial do retângulo, e (largura, altura) são suas dimensões.
--   "color": um objeto da classe "Vec4" que representa a cor utilizada para preencher o retângulo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
--   "rounding": um valor float que representa a quantidade de arredondamento das bordas do retângulo. Quanto maior o valor, mais arredondado será o retângulo.
--   "thickness": um valor float que representa a espessura da linha utilizada para desenhar as bordas do retângulo.
+-   `box`: um objeto da classe "Vec4" que representa as coordenadas do retângulo a ser desenhado. O objeto possui as seguintes informações: (x, y, largura, altura), onde (x, y) é a posição inicial do retângulo, e (largura, altura) são suas dimensões.
+-   `color`: um objeto da classe "Vec4" que representa a cor utilizada para preencher o retângulo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
+-   `rounding`: um valor float que representa a quantidade de arredondamento das bordas do retângulo. Quanto maior o valor, mais arredondado será o retângulo.
+-   `thickness`: um valor float que representa a espessura da linha utilizada para desenhar as bordas do retângulo.
 
 Essa função é útil para desenhar objetos retangulares.
 Exemplo:
@@ -418,9 +418,9 @@ draw:DrawRect(box, color, rounding, thickness)
 A função `DrawRectFilled` é responsável por desenhar um retângulo preenchido na interface gráfica da plataforma. Ela recebe três parâmetros:
 
 ## Parâmetros:
--   "box": um objeto da classe "Vec4" que representa o retângulo a ser desenhado. Os quatro valores do vetor representam respectivamente as coordenadas x e y do canto superior esquerdo do retângulo, seguidas das coordenadas x e y do canto inferior direito do retângulo.
--   "color": um objeto da classe "Vec4" que representa a cor utilizada para preencher o retângulo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
--   "rounding": um valor float que representa o arredondamento dos cantos do retângulo.
+-   `box`: um objeto da classe "Vec4" que representa o retângulo a ser desenhado. Os quatro valores do vetor representam respectivamente as coordenadas x e y do canto superior esquerdo do retângulo, seguidas das coordenadas x e y do canto inferior direito do retângulo.
+-   `color`: um objeto da classe "Vec4" que representa a cor utilizada para preencher o retângulo. A cor é definida pelos valores RGBA (red, green, blue, alpha).
+-   `rounding`: um valor float que representa o arredondamento dos cantos do retângulo.
 
 Essa função é útil para desenhar objetos retangulares preenchidos.
 Exemplo:
