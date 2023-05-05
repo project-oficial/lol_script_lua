@@ -69,9 +69,9 @@ Exemplo de uso:
 
 ```lua
  if(menu) then
-	 menu = ui:Begin("Minha janela", menu);
+	menu = ui:Begin("Minha janela", menu);
 	 
-	 ui:end()
+	ui:end()
  end
 ```
 Nesse exemplo, uma janela com o título "Minha Janela" será criada e inicialmente aberta. O código para desenhar a janela deve ser escrito dentro do bloco condicional, e a função End() deve ser chamada ao final para finalizar a janela.
@@ -93,12 +93,12 @@ Observações: A função `BeginChild()` deve ser seguida pela função `EndChil
 Exemplo de uso:
 ```lua
  if(menu) then
-	 menu = ui:Begin("Minha janela", menu);
-	 if (ui:BeginChild("My Child", Vec2(15, 100), true)) then
-		 ui:Text("This is my child window"); 
-		 ui::EndChild();
-     end
-	 ui:end()
+	menu = ui:Begin("Minha janela", menu);
+		if (ui:BeginChild("My Child", Vec2(15, 100), true)) then
+			ui:Text("This is my child window"); 
+			ui::EndChild();
+		end
+	ui:end()
  end
 ```
 ## Função: `Button()`
@@ -114,15 +114,15 @@ A função `Button` é responsável por renderizar um botão interativo dentro d
 
 ```lua
  if(menu) then
-	 menu = ui:Begin("Minha janela", menu);
-	 if (ui:BeginChild("My Child", Vec2(15, 100), true)) then
-		 ui:Text("This is my child window"); 
-		 ui::EndChild();
-     end
-     if(ui:Button("Click"))then
-	     ui:Text("Good work!");
-     end
-	 ui:end()
+	menu = ui:Begin("Minha janela", menu);
+		if (ui:BeginChild("My Child", Vec2(15, 100), true)) then
+			ui:Text("This is my child window"); 
+			ui::EndChild();
+		end
+		if(ui:Button("Click"))then
+	     		ui:Text("Good work!");
+     		end
+	ui:end()
  end
 ```
 
@@ -192,11 +192,9 @@ A função não retorna nenhum valor.
 
 Exemplo:
 ```lua
-	
-	ui:Text("Elemento 1");
-	ui:Separator();
-	ui:Text("Elemento 2");
-
+ui:Text("Elemento 1");
+ui:Separator();
+ui:Text("Elemento 2");
 ```
 
 ## Função ``NewLine( )``
