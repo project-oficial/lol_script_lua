@@ -943,4 +943,242 @@ Esta função não retorna nenhum valor.
 -- Enviar mensagem para o log
 plataform:PrintToLog("Olá, mundo!")
 ```
+## Classe `GameEntry`
+
+A classe `GameEntry` representa um objeto que contém todas as funções de chamada de objeto do jogo.
+Segue a documentação para a função do objeto `GameEntry` == MyObj:
+
+___
+
+## Função `GetTeam`
+
+Retorna o time atual do jogador controlado pelo objeto.
+
+### Sintaxe
+
+```lua
+function GameEntry:GetTeam()
+```
+
+### Retorno
+
+- `number`: o número do time atual do jogador. Pode ser `100` (azul) ou `200` (vermelho).
+
+### Exemplo de uso
+
+```lua
+-- Verifique o time atual do jogador
+local team = Obj:GetTeam()
+if (team == 100) then
+    ui:Text("O jogador está no time azul.")
+elseif (team == 200) then
+    ui:Text("O jogador está no time vermelho.")
+end
+```
+___
+
+## Função `GetPosition`
+
+A função `GetPosition` retorna a posição tridimensional do objeto.
+
+#### Sintaxe
+
+```lua
+function GameEntry:GetPosition()
+```
+
+#### Retorno
+
+- `Vec3`: um objeto `Vec3` que contém as coordenadas x, y e z da posição tridimensional do objeto.
+
+#### Exemplo de uso
+
+```lua
+-- Obter a posição do jogador
+local playerPosition = GameEntry:GetPosition()
+```
+___
+
+## Função ` IsVisible() `
+
+A função "IsVisible" verifica se o objeto é visível na tela.
+
+#### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+#### Retorno
+
+- `boolean`: `true` se o objeto for visível, `false` caso contrário.
+
+---
+
+## Função ` IsTargetable() `
+
+A função "IsTargetable" verifica se o objeto pode ser definido como um alvo.
+
+#### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+#### Retorno
+
+- `boolean`: `true` se o objeto puder ser definido como um alvo, `false` caso contrário.
+
+___
+
+## Função `GetTeam()`
+
+Retorna o número do time do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o número do time do personagem.
+
+## Função `GetPosition()`
+
+Retorna a posição 3D atual do personagem como um vetor de 3 componentes.
+
+- Argumentos: nenhum
+- Retorno: `Vec3` - a posição 3D atual do personagem.
+
+
+## Função `GetHP()`
+
+Retorna o valor atual do HP do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o valor atual do HP do personagem como um número de ponto flutuante.
+
+## Função `GetMaxHP()`
+
+Retorna o valor máximo do HP do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o valor máximo do HP do personagem como um número de ponto flutuante.
+
+## Função `GetDamage()`
+
+Retorna o valor de dano do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o valor de dano do personagem como um número de ponto flutuante.
+
+## Função `GetRange()`
+
+Retorna a distância de ataque do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - a distância de ataque do personagem como um número de ponto flutuante.
+
+## Função `GetArmor()`
+
+Retorna o valor de armadura do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o valor de armadura do personagem como um número de ponto flutuante.
+
+## Função `GetName()`
+
+Retorna o nome do personagem.
+
+- Argumentos: nenhum
+- Retorno: `string` - o nome do personagem como uma cadeia de caracteres.
+
+## Função `IsAlive()`
+
+Retorna um valor booleano que indica se o personagem está vivo.
+
+- Argumentos: nenhum
+- Retorno: `boolean` - `true` se o personagem está vivo, `false` caso contrário.
+
+## Função `GetLevel()`
+
+Retorna o nível do personagem.
+
+- Argumentos: nenhum
+- Retorno: `number` - o nível do personagem como um número inteiro.
+
+
+
+
+## Função ``GetArmorPenetration()``
+
+Retorna o valor de penetração de armadura do personagem.
+
+- **Retorno**: `number` - o valor de penetração de armadura do personagem.
+
+---
+
+## Função ``GetBonusAttack()``
+
+Retorna o valor de ataque extra do personagem.
+
+- **Retorno**: `number` - o valor de ataque extra do personagem.
+
+---
+
+## Função ``GetAbilityPower()``
+
+Retorna o valor de poder de habilidade (Ability Power) do personagem.
+
+- **Retorno**: `number` - o valor de poder de habilidade do personagem.
+
+---
+
+## Função ``Initialized()``
+
+Verifica se o objeto foi inicializado corretamente.
+
+- **Retorno**: `boolean` - `true` se o objeto foi inicializado corretamente, caso contrário, `false`.
+
+---
+
+## Função ``GetLethality()``
+
+Retorna o valor de letalidade do personagem.
+
+- **Retorno**: `number` - o valor de letalidade do personagem.
+___
+
+## Função `DisTo(obj)`
+
+Calcula a distância entre o objeto atual e outro objeto especificado.
+
+#### Argumentos
+
+-   `obj` (objeto): o objeto do qual se deseja obter a distância.
+
+#### Retorno
+
+-   `number`: a distância em unidades do jogo (float).
+
+#### Exemplo de uso
+```lua
+local distance = player:DisTo(OtherHero);
+```
+___
+
+## Função `IsEnemy(obj)`
+
+Verifica se um objeto é um inimigo.
+
+#### Argumentos
+
+-   `obj` (GameEntry): o objeto a ser verificado.
+
+#### Retorno
+
+-   `boolean`: `true` se o objeto for um inimigo, `false` caso contrário.
+
+#### Exemplo de Uso
+```lua
+ if( player:IsEnemy(OtherHero) ) then
+		-- CODE HERE
+ end
+```
+___
+
+`Q()`, `W()`, `E()`, `R()`, `F()` e `D()`: cada uma dessas funções retorna um objeto da classe `Spell` correspondente à habilidade associada à tecla em questão.
+
+
 
