@@ -1177,8 +1177,100 @@ Verifica se um objeto é um inimigo.
  end
 ```
 ___
+## Função `GetBuffer`
+
+Obtem a lista de buffer da classe (BufferEntry) essa classe represeta cada sessão de buffer
+
+#### Retorno:
+ Lista (table) de objetos da classe BufferEntry
+ 
+___
 
 `Q()`, `W()`, `E()`, `R()`, `F()` e `D()`: cada uma dessas funções retorna um objeto da classe `Spell` correspondente à habilidade associada à tecla em questão.
 
 
+## Classe `BufferEntry`:
+
+A classe `BufferEntry` representa um efeito de magia que é aplicado a um personagem. Ele pode ser um buff (efeito positivo) ou um debuff (efeito negativo). Esta classe contém as seguintes propriedades e métodos:
+
+
+
+
+## Classe `Spell`:
+
+A classe `Spell` representa uma habilidade mágica que um personagem pode usar no jogo. Esta classe contém as seguintes propriedades e métodos:
+
+## Função ``GetTimer``
+
+Retorna o tempo restante de cooldown da magia em segundos.
+
+### Retorno
+
+-   `timer`(float): Tempo restante em segundos até que a magia possa ser utilizada novamente.
+
+___
+
+## Função ``GetLevel``
+
+A função `GetLevel` da classe `Spell` retorna o nível da magia em questão como um número inteiro. Ela não possui argumentos. Aqui está a documentação detalhada:
+
+```
+GetLevel()
+```
+
+Retorna o nível da magia como um número inteiro.
+
+**Retorno:**
+- `level` (int): o nível da magia.
+
+___
+
+## Função ``GetName``
+
+Essa função não possui argumentos.
+**Retorno:**
+- `str`: Retorna o nome da magia como uma string. 
+___
+
+## Função ``GetDamage``
+
+A função `GetDamage` da classe `Spell` retorna o valor do dano físico da magia como um número de ponto flutuante (`float`).
+
+**Retorno:**
+
+-   `float`: O valor do dano físico da magia.
+
+___
+
+## Função ``GetLetter``
+
+A função `GetLetter` da classe `Spell` retorna a letra da magia.
+
+**Retorno:**
+
+-   `Char`: A letra da magia.
+
+___
+
+## Função ``Cast``
+
+A função `Cast` da classe `Spell` Solta a magia pressionando a tecla.
+
+**Retorno:**
+A função não tem retorno
+
+___
+
+
+## Função `CastTrigger(trigger)`
+
+Verifica se um objeto é um inimigo.
+
+#### Argumentos
+
+-   `trigger` (Booleano): Indica se pode pressionar ou soltar a tecla.
+			  `false` para soltar `true` para pressionar
+
+#### Retorno:
+a função não tem retorno
 
