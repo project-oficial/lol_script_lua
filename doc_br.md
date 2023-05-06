@@ -1,4 +1,5 @@
-*está e uma documentação de como criar um script para a plataforma*
+
+*está e uma documentação de como criar um script para a plataforma use F3 para procurar a função ou sessão que deseja Draw \ Plataform \ UI ou função específica*
 
 # Classes GERAIS
 
@@ -437,3 +438,509 @@ local rounding = 10
 -- Chama a função DrawRectFilled para desenhar o retângulo preenchido
 draw:DrawRectFilled(box, color, rounding)
 ```
+
+# Funções ``plataform``
+
+O parâmetro "plataform" da função "update" é um argumento que serve para chamar uma série de funções exportáveis ​​de um módulo Lua. Essas funções podem ser usadas para acessar informações sobre o jogo e controlar o comportamento do script em execução.
+
+As funções incluídas no módulo "plataform" são:
+
+- "GetHeroList": retorna uma lista dos heróis presentes na partida;
+- "GetTurretList": retorna uma lista das torres presentes na partida;
+- "GetMinionsList": retorna uma lista dos lacaios presentes na partida;
+- "GetPlayer": retorna informações sobre o jogador em execução;
+- "MouseClick": simula um clique do mouse em uma posição específica;
+- "GetAsynKeyState": retorna o estado assíncrono de uma tecla específica;
+- "isKeyPress": retorna true se a tecla especificada estiver pressionada;
+- "isKeyDown": retorna true se a tecla especificada estiver em estado "down";
+- "GetTick": retorna o tempo de execução do script;
+- "GetListCount": retorna o número de elementos em uma lista;
+- "ClickOrder": envia um comando de clique para o jogo;
+- "IsForeground": retorna true se o jogo estiver em primeiro plano;
+- "GetGameTick": retorna o tempo atual do jogo;
+- "Wait": pausa a execução do script por um determinado período de tempo;
+- "PressVK": simula a pressão de uma tecla específica;
+- "SetPos": define a posição de uma janela do Windows;
+- "SetMousePos": define a posição do cursor do mouse;
+- "GetPos": retorna a posição atual de uma janela do Windows;
+- "W2S": converte as coordenadas de mundo do jogo em coordenadas de tela;
+- "PrintToLog": imprime uma mensagem no log do script.
+
+Cada uma dessas funções pode ser usada para realizar diferentes tarefas e controlar o comportamento do script em execução.
+
+
+
+---
+
+## Função ``GetHeroList``
+
+A função "GetHeroList" retorna uma lista de objetos do tipo "MyObj" que representam os Objetos presentes na partida.
+
+### Sintaxe
+
+```lua
+GetHeroList()
+```
+
+### Retorno
+
+A função retorna uma lista de objetos do tipo "MyObj", onde cada objeto representa um herói presente na partida.
+
+### Exemplo de uso
+
+```lua
+local heroes = plataform:GetHeroList()
+
+for _, hero in pairs(heroes) do
+   ui:Text(hero.GetName());
+end
+```
+
+Neste exemplo, a função "GetHeroList" é chamada e retorna uma lista de objetos "MyObj". Em seguida, um loop "for" é usado para iterar sobre cada objeto na lista e imprimir o nome do herói. 
+
+
+
+---
+
+## Função ``GetTurretList``
+
+A função "GetTurretList" retorna uma lista de objetos do tipo "MyObj" que representam as torres presentes na partida.
+
+### Sintaxe
+
+```lua
+function GetTurretList()
+```
+
+### Retorno
+
+A função retorna uma lista de objetos do tipo "MyObj", onde cada objeto representa uma torre presente na partida.
+
+### Exemplo de uso
+
+```lua
+local turrets = plataform:GetTurretList()
+
+for _, turret in pairs(turrets) do
+    ui:Text(turret.GetName());
+end
+```
+
+Neste exemplo, a função "GetTurretList" é chamada usando o objeto "plataform" e retorna uma lista de objetos "MyObj". Em seguida, um loop "for" é usado para iterar sobre cada objeto na lista e imprimir o nome da torre na interface. 
+
+---
+
+## Função ``GetMinionsList``
+
+A função "GetMinionsList" retorna uma lista de objetos do tipo "MyObj" que representam os lacaios presentes na partida.
+
+### Sintaxe
+
+```lua
+function GetMinionsList()
+```
+
+### Retorno
+
+A função retorna uma lista de objetos do tipo "MyObj", onde cada objeto representa um lacaio presente na partida.
+
+### Exemplo de uso
+
+```lua
+local minions = plataform:GetMinionsList()
+
+for _, minion in pairs(minions) do
+    ui:Text(minion.GetName())
+end
+```
+
+Neste exemplo, a função "GetMinionsList" é chamada usando o objeto "plataform" e retorna uma lista de objetos "MyObj". Em seguida, um loop "for" é usado para iterar sobre cada objeto na lista e imprimir o nome do lacaio no console. 
+
+---
+## Função ``GetPlayer``
+
+A função "GetPlayer" retorna um objeto do tipo "MyObj" que representa o jogador em execução.
+
+### Sintaxe
+
+```lua
+function GetPlayer()
+```
+
+### Retorno
+
+A função retorna um objeto do tipo "MyObj" que representa o jogador em execução.
+
+### Exemplo de uso
+
+```lua
+local player = plataform:GetPlayer()
+
+ui:Text(player.GetName()).
+```
+
+Neste exemplo, a função "GetPlayer" é chamada usando o objeto "plataform" e retorna um objeto "MyObj". Em seguida, o nome do jogador é impresso na interface usando a propriedade "GetName" do objeto "MyObj". 
+
+---
+## Função ``MouseClick``
+
+A função "MouseClick" clica na posição atual do cursor do mouse.
+
+### Sintaxe
+
+```lua
+function MouseClick(leftClick, delay)
+```
+
+### Argumentos
+
+- `leftClick`: Um valor booleano que indica se o botão esquerdo do mouse será clicado. Se for "true", o botão esquerdo será clicado. Se for "false", o botão direito será clicado. 
+
+- `delay`: O tempo em milissegundos que o botão do mouse será mantido pressionado antes de ser solto.
+
+### Retorno
+
+Esta função não retorna nada.
+
+### Exemplo de uso
+
+```lua
+-- Clique no botão esquerdo do mouse com um atraso de 500 milissegundos
+plataform:MouseClick(true, 500)
+```
+
+Neste exemplo, a função "MouseClick" é chamada usando o objeto "plataform" com o argumento "true", o que significa que o botão esquerdo do mouse será clicado. O argumento "500" indica que haverá um atraso de 500 milissegundos antes de soltar o botão do mouse.
+
+---
+## Função ``GetAsynKeyState``
+
+A função "GetAsynKeyState" retorna o estado assíncrono da tecla especificada.
+
+### Sintaxe
+
+```lua
+function GetAsynKeyState(key)
+```
+
+### Argumentos
+
+- `key`: O valor numérico do código da tecla para a qual se deseja verificar o estado.
+
+### Retorno
+
+O valor do retorno é um booleano que represeta se a tecla foi pressioanda ou está precionada
+
+### Exemplo de uso
+
+```lua
+-- Verifique se a tecla "A" está sendo pressionada
+if (plataform:GetAsynKeyState(65)) then
+    ui:Text("A está pressionada")
+end
+```
+
+---
+## Função ``isKeyPress``
+
+A função "isKeyPress" verifica se a tecla especificada está sendo pressionada.
+
+### Sintaxe
+
+```lua
+function isKeyPress(key)
+```
+
+### Argumentos
+
+- `key`: O valor numérico do código da tecla para a qual se deseja verificar o estado.
+
+### Retorno
+
+Retorna `true` se a tecla especificada estiver sendo pressionada, caso contrário, retorna `false`.
+
+### Exemplo de uso
+
+```lua
+-- Verifique se a tecla "A" está sendo pressionada
+if plataform:isKeyPress(65) then
+    ui:Text("A está pressionada")
+end
+```
+
+Neste exemplo, a função "isKeyPress" é chamada usando o objeto "plataform" com o argumento "65", que corresponde ao código da tecla "A". Se a tecla "A" estiver pressionada, a mensagem "A está pressionada" será impressa no console.
+
+---
+
+## Função ``isKeyDown``
+
+A função "isKeyDown" verifica se a tecla especificada está sendo pressionada.
+
+### Sintaxe
+
+```lua
+function isKeyDown(key)
+```
+
+### Argumentos
+
+- `key`: O valor numérico do código da tecla para a qual se deseja verificar o estado.
+
+### Retorno
+
+Retorna `true` se a tecla especificada estiver sendo pressionada, caso contrário, retorna `false`.
+
+### Exemplo de uso
+
+```lua
+-- Verifique se a tecla "A" está sendo pressionada
+if (plataform:isKeyDown(65)) then
+    ui:Text("A está foi pressionada")
+end
+```
+## Função ``GetTick()`` 
+Retorna o tempo atual do sistema em milissegundos. 
+
+#### Argumentos
+ Esta função não recebe nenhum argumento. 
+ 
+#### Retorno
+ - `number`: um número que representa o tempo atual do sistema em milissegundos.
+
+
+### Exemplo de uso
+
+```lua
+local tickSistem = plataform:GetTick();
+```
+
+---
+
+## Funções `` IsLolForeground() ``
+
+Verifica se a janela do jogo está em primeiro plano.
+
+#### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+#### Retorno
+
+- `boolean`: `true` se a janela do jogo estiver em primeiro plano, `false` caso contrário.
+
+---
+
+
+## Funções `` GetListCount(list) ``
+
+Retorna o número de elementos em uma lista.
+
+#### Argumentos
+
+- `list` (table): a lista a ser verificada.
+
+#### Retorno
+
+- `number`: o número de elementos na lista.
+
+---
+
+## Funções ``ClickOrder(x, y, order)``
+
+Envia um clique do mouse para um ponto específico na tela.
+
+#### Argumentos
+
+- `x` (number): a coordenada X do ponto onde o clique será enviado.
+- `y` (number): a coordenada Y do ponto onde o clique será enviado.
+- `order` (boolean): o tipo de clique a ser enviado. Deve ser uma das seguintes opções:
+  - `"true"`: clique com o botão esquerdo do mouse.
+  - `"false"`: clique com o botão direito do mouse.
+
+
+#### Retorno
+
+Esta função não retorna nenhum valor.
+
+---
+
+## Funções `` IsLolForeground() ``
+
+Verifica se a janela do jogo está em primeiro plano.
+
+#### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+#### Retorno
+
+- `boolean`: `true` se a janela do jogo estiver em primeiro plano, `false` caso contrário.
+
+---
+
+## Funções `` GetGameTick() ``
+
+Retorna o tempo atual do jogo em milissegundos.
+
+#### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+#### Retorno
+
+- `number`: um número que representa o tempo atual do jogo em milissegundos.
+
+---
+
+
+## Funções ``Wait(ms)``
+
+Faz o sistema esperar o tempo desejado em milissegundos.
+
+#### Argumentos
+
+- `time` (number): O tempo em milissegundos que a função deve esperar antes de continuar a execução.
+
+#### Retorno
+
+Esta função não retorna nenhum valor.
+
+#### Exemplo de uso
+
+```lua
+-- Espera 1 segundo antes de continuar a execução
+plataform:Wait(1000)
+```
+
+---
+
+## Funções ``PressVK(key, delay)``
+
+Pressiona uma tecla especificada e aguarda um tempo antes de soltar.
+
+#### Argumentos
+
+- `vk` (number): O valor numérico da tecla a ser pressionada.
+- `delay` (number): O tempo em milissegundos que a função deve esperar antes de soltar a tecla.
+
+#### Retorno
+
+Esta função não retorna nenhum valor.
+
+#### Exemplo de uso
+
+```lua
+-- Pressiona a tecla "A" e espera 500ms antes de soltar
+plataform:PressVK(65, 500)
+```
+
+___
+
+## Funções ``SetPos``
+
+Move o cursor do mouse para uma posição 3D específica no jogo.
+
+#### Argumentos
+
+- `vec3` (table): um objeto vec3 contendo as coordenadas X, Y e Z da posição para a qual o cursor do mouse será movido.
+
+#### Retorno
+
+Esta função não retorna nenhum valor.
+
+---
+
+## Funções ``SetMousePos``
+
+Define a posição absoluta do cursor do mouse na tela.
+
+#### Argumentos
+
+- `vec2` (table): um objeto vec2 contendo as coordenadas X e Y da posição absoluta do cursor do mouse.
+
+#### Retorno
+
+Esta função não retorna nenhum valor.
+
+___
+
+## Função `GetPos`
+
+A função "GetPos" retorna a posição atual do cursor do mouse em coordenadas 2D.
+
+### Sintaxe
+
+```lua
+function GetPos()
+```
+
+### Argumentos
+
+Esta função não recebe nenhum argumento.
+
+### Retorno
+
+- `Vec2`: um objeto `Vec2` que contém as coordenadas X e Y atuais do cursor do mouse.
+
+### Exemplo de uso
+
+```lua
+-- Obtém a posição atual do cursor do mouse
+local mousePos = plataform:GetPos()
+
+-- Exibe a posição em um texto
+ui:Text(string.format("A posição atual do cursor do mouse é: %f, %f", mousePos.x, mousePos.y))
+```
+
+___
+
+## Função ``W2S``
+
+Converte uma posição 3D no mundo do jogo em uma posição 2D na tela.
+
+#### Argumentos
+
+- `position` (Vec3): uma tabela contendo os valores X, Y e Z da posição 3D no mundo do jogo.
+
+#### Retorno
+
+- `Vec2`: uma tabela contendo os valores X e Y da posição 2D na tela.
+
+#### Exemplo de uso
+
+```lua
+-- Obtenha a posição do herói local
+local localHero = plataforma:GetLocalHero()
+local heroPos = localHero:GetPos()
+
+-- Converta a posição 3D em uma posição 2D na tela
+local screenPos = plataforma:W2S(heroPos)
+
+-- Imprima a posição na tela
+ui:Text(string.format( "Posição do herói na tela: %f, %f", screenPos.x, screenPos.y ))
+```
+
+___
+## Função ``PrintToLog``
+A função "PrintToLog" envia uma mensagem para o log do jogo.
+
+### Sintaxe
+
+```lua
+function PrintToLog(message)
+```
+
+### Argumentos
+
+- `message` (string): a mensagem a ser enviada para o log do jogo.
+
+### Retorno
+
+Esta função não retorna nenhum valor.
+
+### Exemplo de uso
+
+```lua
+-- Enviar mensagem para o log
+plataform:PrintToLog("Olá, mundo!")
+```
+
