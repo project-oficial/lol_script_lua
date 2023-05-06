@@ -84,7 +84,7 @@ function ScriptUpdate(draw, ui, plataform)
     last_hit    = false;
 
 
-    if(plataform:iskeyDown(vk_home)) then
+    if(plataform:isKeyDown(vk_home)) then
         menu_enabled = not menu_enabled;
     end
 
