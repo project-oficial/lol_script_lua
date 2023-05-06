@@ -1188,13 +1188,8 @@ ___
 
 `Q()`, `W()`, `E()`, `R()`, `F()` e `D()`: cada uma dessas funções retorna um objeto da classe `Spell` correspondente à habilidade associada à tecla em questão.
 
-
-## Classe `BufferEntry`:
-
-A classe `BufferEntry` representa um efeito de magia que é aplicado a um personagem. Ele pode ser um buff (efeito positivo) ou um debuff (efeito negativo). Esta classe contém as seguintes propriedades e métodos:
-
-
-
+___
+___
 
 ## Classe `Spell`:
 
@@ -1274,3 +1269,29 @@ Verifica se um objeto é um inimigo.
 #### Retorno:
 a função não tem retorno
 
+
+
+## Classe `BufferEntry`:
+
+A classe `BufferEntry` representa um efeito de magia que é aplicado a um personagem. Ele pode ser um buff (efeito positivo) ou um debuff (efeito negativo). Esta classe contém as seguintes propriedades e métodos:
+
+
+### `GetName() -> str`
+
+Retorna o nome do buffer.
+
+### `GetStart() -> float`
+
+Retorna o momento em que o buffer começou a ser aplicado, em segundos desde o início da partida.
+
+### `GetCount() -> float`
+
+Retorna a duração do buffer em segundos.
+
+### `GetCountAlt() -> float`
+
+Retorna a quantidade acumulada do buffer.
+
+### `GetEnd() -> float`
+
+Retorna o momento em que o buffer expira, em segundos desde o início da partida.
