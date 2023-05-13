@@ -1,4 +1,5 @@
-dofile("C\\scripts\\util.lua");
+dofile("C:\\scripts\\util.lua");
+
 
 local me;
 local Heros;
@@ -86,7 +87,7 @@ function ScriptUpdate(draw, ui, plataform)
     end
 
     for _, value in pairs(Heros) do
-        if ((not value:IsAlive()) or (not value:IsEnimy(me))) then
+        if ((not value:IsAlive()) or (not value:IsEnemy(me))) then
             goto CONTINUE;
         end
         if (not value:IsVisible()) then
@@ -100,7 +101,7 @@ function ScriptUpdate(draw, ui, plataform)
         for _, v in pairs(listBuffers) do
             local nameBuffer = v:GetName();
             if (string.find(nameBuffer, "TwitchDeadlyVenom")) then
-                stack = v:GetCountAlt();
+                stack = v:GetCount();
             end
         end
         if (stack < 1) then
