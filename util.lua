@@ -108,7 +108,7 @@ function IsValidEnemy(value, me)
     if(not IsValidObj(value))then
         return false;
     end
-    if (not value:IsEnimy(me)) then
+    if (not value:IsEnemy(me)) then
         return false;
     end
     return true;
