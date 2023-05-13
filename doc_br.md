@@ -1284,11 +1284,11 @@ Retorna o nome do buffer.
 
 Retorna o momento em que o buffer começou a ser aplicado, em segundos desde o início da partida.
 
-### `GetCount() -> float`
+### `GetCountAlt() -> float`
 
 Retorna a duração do buffer em segundos.
 
-### `GetCountAlt() -> float`
+### `GetCount() -> int`
 
 Retorna a quantidade acumulada do buffer.
 
