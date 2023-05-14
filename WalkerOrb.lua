@@ -30,7 +30,7 @@ function GetTarget(you, list, hero, hit)
     local enemies = {}
     for _, enemy in pairs(list) do
 
-        if enemy:IsEnimy(you) and enemy:IsAlive() and IsClosets(enemy, you, 0) then
+        if enemy:IsEnemy(you) and enemy:IsAlive() and IsClosets(enemy, you, 0) then
 
             if(not StringContains(exclude, enemy:GetName())) then
                 table.insert(enemies, enemy)
